@@ -68,7 +68,7 @@ export default function Logo({ light = false, className, style }: LogoProps) {
         letterSpacing="-1"
       >
         <tspan fill={text2}>auto.</tspan>
-        <tspan fill="#00B2D8">ca.</tspan>
+        <tspan fill="#00B2D8">ca</tspan>
       </text>
     </svg>
   )
