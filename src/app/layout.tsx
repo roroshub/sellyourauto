@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
+import RevealObserver from '@/components/RevealObserver'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -94,7 +95,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <RevealObserver />
+        {children}
+      </body>
     </html>
   )
 }
