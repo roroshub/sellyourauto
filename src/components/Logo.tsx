@@ -1,83 +1,73 @@
 interface LogoProps {
   light?: boolean
-  width?: number
+  className?: string
+  style?: React.CSSProperties
 }
 
-export default function Logo({ light = false, width = 200 }: LogoProps) {
-  const textPrimary = light ? '#ffffff' : '#1A2766'
-  const textBold    = light ? '#ffffff' : '#0f1a2e'
+export default function Logo({ light = false, className, style }: LogoProps) {
+  const text1 = light ? '#ffffff' : '#1A2766'   // "sellyour"
+  const text2 = light ? '#ffffff' : '#0d1a2e'   // "auto."
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 580 140"
-      width={width}
-      height={Math.round(width * (140 / 580))}
+      viewBox="0 0 510 138"
       aria-label="SellYourAuto.ca"
       role="img"
-      style={{ display: 'block', flexShrink: 0 }}
+      className={className}
+      style={{ display: 'block', height: '100%', width: 'auto', ...style }}
     >
       <defs>
-        <linearGradient id="sya-badge" x1="0" y1="1" x2="1" y2="0">
+        <linearGradient id="syaBadge" x1="0" y1="1" x2="1" y2="0">
           <stop offset="0%"   stopColor="#1A2766" />
-          <stop offset="55%"  stopColor="#1A2766" />
-          <stop offset="100%" stopColor="#00B2D8" />
+          <stop offset="58%"  stopColor="#1A2766" />
+          <stop offset="100%" stopColor="#00AACC" />
         </linearGradient>
       </defs>
 
-      {/* Badge */}
-      <rect width="140" height="140" rx="22" fill="url(#sya-badge)" />
+      {/* ── Badge ── */}
+      <rect width="138" height="138" rx="21" fill="url(#syaBadge)" />
 
-      {/* Car — white silhouette with evenodd headlight + grille cutouts */}
+      {/* ── Car silhouette (white, evenodd cutouts for headlights + grille) ── */}
       <path
         fill="white"
         fillRule="evenodd"
-        d={[
+        d={
           // Outer body
-          'M 36,16',
-          'Q 70,10 104,16',
-          'L 118,42',
-          'Q 128,56 128,74',
-          'Q 128,92 120,104',
-          'C 118,120 95,128 88,104',
-          'Q 80,109 70,109',
-          'Q 60,109 52,104',
-          'C 45,128 22,120 20,104',
-          'Q 12,92 12,74',
-          'Q 12,56 22,42',
-          'Z',
+          'M 35,15 Q 69,9 103,15 L 117,41 Q 127,55 127,73 Q 127,91 119,103' +
+          ' C 117,119 94,127 87,103 Q 79,108 69,108 Q 59,108 51,103' +
+          ' C 44,127 21,119 19,103 Q 11,91 11,73 Q 11,55 21,41 Z' +
           // Left headlight hole
-          'M 24,76 A 17,13 0 1,0 58,76 A 17,13 0 1,0 24,76 Z',
+          ' M 23,74 A 17,12 0 1,0 57,74 A 17,12 0 1,0 23,74 Z' +
           // Right headlight hole
-          'M 82,76 A 17,13 0 1,0 116,76 A 17,13 0 1,0 82,76 Z',
-          // Grille hole (rounded rect)
-          'M 62,86 L 78,86 Q 83,86 83,91 Q 83,97 78,97 L 62,97 Q 57,97 57,91 Q 57,86 62,86 Z',
-        ].join(' ')}
+          ' M 81,74 A 17,12 0 1,0 115,74 A 17,12 0 1,0 81,74 Z' +
+          // Grille hole
+          ' M 61,85 L 77,85 Q 82,85 82,90 Q 82,96 77,96 L 61,96 Q 56,96 56,90 Q 56,85 61,85 Z'
+        }
       />
 
-      {/* "sellyour" */}
+      {/* ── "sellyour" ── */}
       <text
-        x="158"
-        y="58"
+        x="153"
+        y="55"
         fontFamily="'Poppins', system-ui, sans-serif"
-        fontSize="50"
+        fontSize="47"
         fontWeight="600"
-        fill={textPrimary}
-        style={{ transition: 'fill 0.35s' }}
+        fill={text1}
       >
         sellyour
       </text>
 
-      {/* "auto.ca." */}
+      {/* ── "auto.ca." ── */}
       <text
-        x="158"
-        y="133"
+        x="153"
+        y="129"
         fontFamily="'Poppins', system-ui, sans-serif"
-        fontSize="78"
+        fontSize="75"
         fontWeight="800"
         letterSpacing="-1"
       >
-        <tspan fill={textBold} style={{ transition: 'fill 0.35s' }}>auto.</tspan>
+        <tspan fill={text2}>auto.</tspan>
         <tspan fill="#00B2D8">ca.</tspan>
       </text>
     </svg>
