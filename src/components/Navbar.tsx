@@ -37,7 +37,17 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#hero" aria-label="SellYourAuto.ca home" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="SellYourAuto.ca" style={{ height: 46, width: 'auto', display: 'block' }} />
+          <img
+            src="/logo.png"
+            alt="SellYourAuto.ca"
+            style={{
+              height: 46,
+              width: 'auto',
+              display: 'block',
+              filter: scrolled ? 'none' : 'brightness(0) invert(1)',
+              transition: 'filter 0.35s',
+            }}
+          />
         </a>
 
         {/* Desktop links */}
