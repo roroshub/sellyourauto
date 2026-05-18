@@ -1,7 +1,7 @@
 {
   "name": "SellYourAuto.ca",
   "tagline": "Sell Your Car for the Best Price.",
-  "subTagline": "Quick, easy, and hassle-free.",
+  "subTagline": "Quick, easy, and completely hassle-free.",
   "description": "Canada's premier destination for selling your vehicle with speed, ease, and confidence.",
   "email": "support@sellyourauto.ca",
   "phone": "1-800-SELL-AUTO",
@@ -19,30 +19,44 @@
     "Same-Day Offers",
     "Coast to Coast",
     "All Makes & Models",
-    "Zero Fees"
+    "Zero Fees",
+    "Instant E-Transfer",
+    "Proudly Canadian"
   ],
   "about": {
-    "eyebrow": "About Us",
+    "eyebrow": "About SellYourAuto.ca",
     "heading": "Canada's Smarter Way\nTo Sell Your Car.",
-    "body1": "We built SellYourAuto.ca because selling a car in Canada shouldn't require weeks of listings, sketchy test drives, or lowball dealership trade-ins. Our lightning-fast appraisal system puts a real offer in your hands within minutes — backed by real market data.",
-    "body2": "From Halifax to Vancouver, we've helped thousands of Canadians get top dollar for their vehicles with zero stress, zero hidden fees, and zero games. Fill out the form, get your offer, and we'll handle the rest.",
+    "body1": "We built SellYourAuto.ca because selling a car in Canada shouldn't mean weeks of listings, sketchy strangers, or lowball dealership trade-ins. Our lightning-fast appraisal system puts a real, guaranteed offer in your hands within minutes.",
+    "body2": "From Halifax to Vancouver, we've helped thousands of Canadians get top dollar for their vehicles — with zero stress, zero hidden fees, and zero games. Fill out the form, get your offer, and we'll handle the rest.",
     "pillars": [
-      { "icon": "◈", "title": "Transparent Pricing", "desc": "Real market data, honest numbers — no bait and switch." },
-      { "icon": "◈", "title": "Lightning Fast", "desc": "Appraisal in minutes. Pickup scheduled within 48 hours." },
-      { "icon": "◈", "title": "Zero Fees", "desc": "We pay you. No commissions, no listing fees, no surprises." }
+      { "icon": "🔍", "title": "Transparent Pricing", "desc": "Real Canadian market data, honest numbers — no bait and switch." },
+      { "icon": "⚡", "title": "Lightning Fast", "desc": "Appraisal in minutes. Free pickup scheduled within 48 hours." },
+      { "icon": "💰", "title": "Zero Fees Ever", "desc": "We pay you. No commissions, no listing fees, no surprises." }
     ]
   },
   "howItWorks": {
     "eyebrow": "The Process",
-    "heading": "Three Steps to\nYour Best Offer.",
+    "heading": "Three Simple Steps\nTo Your Best Offer.",
     "steps": [
-      { "num": "01", "title": "Describe Your Vehicle", "desc": "Fill out our smart form with your car's year, make, model, mileage, and condition. Upload a few photos to maximize your offer." },
-      { "num": "02", "title": "Receive Your Offer", "desc": "Our appraisal engine analyzes real-time market data and delivers a guaranteed offer — typically within minutes of submission." },
-      { "num": "03", "title": "Get Paid & We Pick Up", "desc": "Accept your offer, choose a pickup time, and we handle the rest. Payment is issued on the spot. It really is that simple." }
+      {
+        "num": "01",
+        "title": "Describe Your Vehicle",
+        "desc": "Fill out our smart form with your car's year, make, model, mileage, and condition. Upload a few photos to maximize your offer — takes about 2 minutes."
+      },
+      {
+        "num": "02",
+        "title": "Receive Your Offer",
+        "desc": "Our appraisal engine analyzes real-time Canadian market data and delivers a guaranteed offer — typically within minutes of submission. No obligation to accept."
+      },
+      {
+        "num": "03",
+        "title": "Get Paid, We Pick Up",
+        "desc": "Accept your offer, pick a time that works for you, and we come to you — anywhere in Canada. Payment is issued on the spot via e-transfer. Done!"
+      }
     ]
   },
   "footer": {
-    "tagline": "Canada's smarter way to sell.",
+    "tagline": "Canada's smarter way to sell your car.",
     "copyright": "© 2026 SellYourAuto.ca. All rights reserved.",
     "disclaimer": "SellYourAuto.ca operates coast to coast across Canada."
   }

@@ -1,11 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const links = [
-  { href: '#about', label: 'About' },
+  { href: '#about', label: 'About Us' },
   { href: '#how-it-works', label: 'How It Works' },
-  { href: '#values', label: 'Our Values' },
+  { href: '#values', label: 'Why Us' },
   { href: '#testimonials', label: 'Reviews' },
 ]
 
@@ -14,94 +15,101 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const closeMenu = () => setMenuOpen(false)
-
   return (
     <nav
+      role="navigation"
+      aria-label="Main navigation"
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-        transition: 'background 0.4s, backdrop-filter 0.4s, border-color 0.4s',
-        background: scrolled ? 'rgba(8,8,8,0.93)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent',
+        transition: 'background 0.35s, box-shadow 0.35s',
+        background: scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(16px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
+        boxShadow: scrolled ? '0 2px 24px rgba(26,39,102,0.10)' : 'none',
       }}
     >
-      {/* Desktop nav */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 80, padding: '0 48px', maxWidth: 1400, margin: '0 auto' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 76, padding: '0 clamp(20px,4vw,48px)', maxWidth: 1320, margin: '0 auto' }}>
+
         {/* Logo */}
-        <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: 14, color: '#FAFAF8' }}>
-          <span style={{
-            width: 44, height: 44, background: '#C9A96E', color: '#080808',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 600, letterSpacing: '0.05em', flexShrink: 0,
-          }}>SYA</span>
-          <span style={{ fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500, letterSpacing: '0.06em', lineHeight: 1.3, textTransform: 'uppercase' }}>
-            SellYourAuto<br />
-            <small style={{ fontSize: 10, fontWeight: 400, letterSpacing: '0.12em', opacity: 0.6 }}>Canada's Best Offer</small>
-          </span>
+        <a href="#hero" aria-label="SellYourAuto.ca home" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+          <Image src="/logo.png" alt="SellYourAuto.ca Logo" width={180} height={48} priority style={{ height: 42, width: 'auto', objectFit: 'contain' }} />
         </a>
 
         {/* Desktop links */}
-        <ul style={{ display: 'flex', alignItems: 'center', gap: 36, listStyle: 'none' }} className="hidden-mobile">
+        <ul className="nav-links-desktop" style={{ display: 'flex', alignItems: 'center', gap: 32, listStyle: 'none' }}>
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', transition: 'color 0.2s' }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#FAFAF8')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
+              <a href={l.href} style={{
+                color: scrolled ? '#1A2766' : 'rgba(255,255,255,0.9)',
+                fontSize: 14, fontWeight: 500, letterSpacing: '0.01em',
+                transition: 'color 0.2s', padding: '4px 0', position: 'relative',
+              }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#00B2D8')}
+                onMouseLeave={e => (e.currentTarget.style.color = scrolled ? '#1A2766' : 'rgba(255,255,255,0.9)')}
               >{l.label}</a>
             </li>
           ))}
           <li>
             <a href="#appraisal" style={{
-              color: '#C9A96E', border: '1px solid #C9A96E', padding: '8px 20px',
-              fontSize: 12, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase',
-              transition: 'background 0.2s, color 0.2s',
+              background: '#00B2D8', color: '#fff', padding: '11px 24px', borderRadius: 6,
+              fontSize: 14, fontWeight: 600, letterSpacing: '0.01em',
+              transition: 'background 0.2s, transform 0.2s, box-shadow 0.2s',
+              display: 'inline-block',
             }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#C9A96E'; e.currentTarget.style.color = '#080808' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#C9A96E' }}
-            >Get My Offer</a>
+              onMouseEnter={e => { e.currentTarget.style.background = '#0099C0'; e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,178,216,0.4)' }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#00B2D8'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}
+            >Get Free Offer</a>
           </li>
         </ul>
 
         {/* Burger */}
         <button
           onClick={() => setMenuOpen(o => !o)}
-          style={{ display: 'none', flexDirection: 'column', gap: 5, background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}
           className="burger-btn"
-          aria-label="Toggle menu"
+          style={{ display: 'none', flexDirection: 'column', gap: 5, background: 'none', border: 'none', cursor: 'pointer', padding: 6, borderRadius: 4 }}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
-          <span style={{ display: 'block', width: 24, height: 1.5, background: '#FAFAF8', transition: 'transform 0.3s, opacity 0.3s', transform: menuOpen ? 'rotate(45deg) translate(4.5px, 4.5px)' : 'none' }} />
-          <span style={{ display: 'block', width: 24, height: 1.5, background: '#FAFAF8', transition: 'opacity 0.3s', opacity: menuOpen ? 0 : 1 }} />
-          <span style={{ display: 'block', width: 24, height: 1.5, background: '#FAFAF8', transition: 'transform 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(4.5px, -4.5px)' : 'none' }} />
+          {[0, 1, 2].map((i) => (
+            <span key={i} style={{
+              display: 'block', width: 22, height: 2, borderRadius: 2,
+              background: scrolled ? '#1A2766' : '#fff',
+              transition: 'transform 0.3s, opacity 0.3s',
+              transform: i === 0 && menuOpen ? 'rotate(45deg) translate(5px, 5px)' : i === 2 && menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
+              opacity: i === 1 && menuOpen ? 0 : 1,
+            }} />
+          ))}
         </button>
       </div>
 
       {/* Mobile menu */}
       <div style={{
-        background: '#080808', borderTop: '1px solid rgba(255,255,255,0.08)',
-        maxHeight: menuOpen ? 400 : 0, overflow: 'hidden', transition: 'max-height 0.4s',
+        background: '#fff',
+        borderTop: '1px solid rgba(26,39,102,0.08)',
+        maxHeight: menuOpen ? 400 : 0, overflow: 'hidden',
+        transition: 'max-height 0.4s var(--ease-smooth)',
+        boxShadow: menuOpen ? '0 8px 24px rgba(26,39,102,0.12)' : 'none',
       }}>
-        {[...links, { href: '#appraisal', label: 'Get My Offer' }].map((l) => (
-          <a key={l.href} href={l.href} onClick={closeMenu} style={{
-            display: 'block', color: 'rgba(255,255,255,0.7)', fontSize: 13, fontWeight: 500,
-            letterSpacing: '0.1em', textTransform: 'uppercase', padding: '18px 48px',
-            borderBottom: '1px solid rgba(255,255,255,0.08)', transition: 'color 0.2s, padding-left 0.2s',
+        {[...links, { href: '#appraisal', label: 'Get Free Offer ↗' }].map((l) => (
+          <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} style={{
+            display: 'block', color: '#1A2766', fontSize: 15, fontWeight: 500,
+            padding: '16px clamp(20px,4vw,48px)', borderBottom: '1px solid rgba(26,39,102,0.06)',
+            transition: 'color 0.2s, background 0.2s',
           }}
-            onMouseEnter={e => { e.currentTarget.style.color = '#C9A96E'; e.currentTarget.style.paddingLeft = '56px' }}
-            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; e.currentTarget.style.paddingLeft = '48px' }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#00B2D8'; e.currentTarget.style.background = '#F0FBFF' }}
+            onMouseLeave={e => { e.currentTarget.style.color = '#1A2766'; e.currentTarget.style.background = 'transparent' }}
           >{l.label}</a>
         ))}
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .hidden-mobile { display: none !important; }
+        @media (max-width: 800px) {
+          .nav-links-desktop { display: none !important; }
           .burger-btn { display: flex !important; }
         }
       `}</style>
