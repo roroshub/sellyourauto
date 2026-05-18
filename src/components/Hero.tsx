@@ -136,14 +136,9 @@ export default function Hero({ tagline, subTagline, stats }: HeroProps) {
           >How It Works</a>
         </div>
 
-        {/* Stats */}
-        <div ref={statsRef} className="reveal" style={{ display: 'flex', alignItems: 'center', gap: 0, flexWrap: 'wrap', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.18)', padding: '24px 32px', width: 'fit-content', maxWidth: '100%' }}>
-          {stats.map((s, i) => (
-            <div key={s.label} style={{ display: 'flex', alignItems: 'center' }}>
-              {i > 0 && <div style={{ width: 1, height: 40, background: 'rgba(255,255,255,0.2)', margin: '0 clamp(20px,3vw,40px)' }} />}
-              <StatItem {...s} triggered={statsTriggered} />
-            </div>
-          ))}
+        {/* Stats — 48hrs only */}
+        <div ref={statsRef} className="reveal" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.18)', padding: '20px 32px' }}>
+          <StatItem {...stats.find(s => s.num === '48hrs')!} triggered={statsTriggered} />
         </div>
       </div>
 
