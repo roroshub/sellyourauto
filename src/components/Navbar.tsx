@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import Logo from './Logo'
 
 const links = [
   { href: '#about', label: 'About Us' },
@@ -37,7 +37,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#hero" aria-label="SellYourAuto.ca home" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
-          <Image src="/logo.png" alt="SellYourAuto.ca Logo" width={180} height={48} priority style={{ height: 42, width: 'auto', objectFit: 'contain' }} />
+          <Logo light={!scrolled} width={210} />
         </a>
 
         {/* Desktop links */}
