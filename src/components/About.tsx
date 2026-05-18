@@ -41,22 +41,7 @@ export default function About({ eyebrow, heading, body1, body2, pillars }: About
                 </div>
               </div>
 
-              {/* Floating stat badge */}
-              <div className="badge-pulse" style={{
-                position: 'absolute', bottom: -20, right: -16,
-                background: '#fff', borderRadius: 12, padding: '16px 20px',
-                boxShadow: '0 12px 40px rgba(26,39,102,0.18)',
-                display: 'flex', alignItems: 'center', gap: 12,
-                border: '1px solid rgba(0,178,216,0.15)',
-              }}>
-                <div style={{ width: 44, height: 44, borderRadius: 10, background: 'linear-gradient(135deg, #00B2D8, #1A2766)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>🏆</div>
-                <div>
-                  <strong style={{ display: 'block', fontSize: 16, fontWeight: 700, color: '#1A2766', fontFamily: 'var(--font-display)' }}>10,000+</strong>
-                  <small style={{ fontSize: 12, color: '#6B7280' }}>Vehicles Purchased</small>
-                </div>
-              </div>
-
-              {/* Accent quote card */}
+{/* Accent quote card */}
               <div style={{ marginTop: 40, padding: '20px 24px', borderRadius: 10, background: '#EEF3FF', borderLeft: '4px solid #00B2D8' }}>
                 <p style={{ fontSize: 15, fontStyle: 'italic', color: '#1A2766', lineHeight: 1.6, fontWeight: 500 }}>
                   &ldquo;Selling your car should take minutes, not months. We built the process Canadians actually deserve.&rdquo;
