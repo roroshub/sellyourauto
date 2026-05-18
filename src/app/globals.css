@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-black:    #080808;
+  --color-dark:     #111111;
+  --color-dark2:    #1a1a1a;
+  --color-dark3:    #222222;
+  --color-gold:     #C9A96E;
+  --color-gold-lt:  #E8D5B0;
+  --color-cream:    #FAFAF8;
+  --color-cream2:   #F5F3EF;
+  --color-grey:     #888888;
+  --color-grey-lt:  #CCCCCC;
+  --color-border:   rgba(255,255,255,0.08);
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans:  var(--font-inter), system-ui, sans-serif;
+
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--color-gold); color: var(--color-black); }
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; }
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 30s linear infinite; }
+
+/* Scroll hint pulse */
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 0.8; transform: scaleY(1.2); }
+}
+.scroll-pulse { animation: scrollPulse 2s ease-in-out infinite; }
+
+/* Service card bottom accent */
+.card-accent::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease-smooth);
+  transform-origin: left;
+}
+.card-accent:hover::before { transform: scaleX(1); }
+
+/* Hero grid */
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+/* Listing placeholder silhouette */
+.listing-silhouette::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 50%;
+  background: rgba(255,255,255,0.12);
+  clip-path: polygon(10% 100%, 10% 40%, 0% 40%, 50% 0%, 100% 40%, 90% 40%, 90% 100%, 60% 100%, 60% 65%, 40% 65%, 40% 100%);
+}
+
+/* Car silhouette for hero */
+.car-silhouette {
+  clip-path: polygon(
+    0% 70%, 5% 70%, 10% 45%, 20% 30%, 35% 22%, 55% 22%, 70% 30%, 78% 45%,
+    85% 45%, 88% 55%, 90% 70%, 83% 70%, 80% 55%, 20% 55%, 17% 70%
+  );
 }

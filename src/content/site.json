@@ -1,0 +1,49 @@
+{
+  "name": "SellYourAuto.ca",
+  "tagline": "Sell Your Car for the Best Price.",
+  "subTagline": "Quick, easy, and hassle-free.",
+  "description": "Canada's premier destination for selling your vehicle with speed, ease, and confidence.",
+  "email": "support@sellyourauto.ca",
+  "phone": "1-800-SELL-AUTO",
+  "support": "24/7",
+  "stats": [
+    { "num": "10000+", "label": "Vehicles Purchased" },
+    { "num": "$500M+", "label": "Paid to Sellers" },
+    { "num": "48hrs", "label": "Avg. Offer to Pickup" }
+  ],
+  "marquee": [
+    "Instant Appraisal",
+    "No Haggling",
+    "Best Price Guaranteed",
+    "Free Pickup",
+    "Same-Day Offers",
+    "Coast to Coast",
+    "All Makes & Models",
+    "Zero Fees"
+  ],
+  "about": {
+    "eyebrow": "About Us",
+    "heading": "Canada's Smarter Way\nTo Sell Your Car.",
+    "body1": "We built SellYourAuto.ca because selling a car in Canada shouldn't require weeks of listings, sketchy test drives, or lowball dealership trade-ins. Our lightning-fast appraisal system puts a real offer in your hands within minutes — backed by real market data.",
+    "body2": "From Halifax to Vancouver, we've helped thousands of Canadians get top dollar for their vehicles with zero stress, zero hidden fees, and zero games. Fill out the form, get your offer, and we'll handle the rest.",
+    "pillars": [
+      { "icon": "◈", "title": "Transparent Pricing", "desc": "Real market data, honest numbers — no bait and switch." },
+      { "icon": "◈", "title": "Lightning Fast", "desc": "Appraisal in minutes. Pickup scheduled within 48 hours." },
+      { "icon": "◈", "title": "Zero Fees", "desc": "We pay you. No commissions, no listing fees, no surprises." }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "The Process",
+    "heading": "Three Steps to\nYour Best Offer.",
+    "steps": [
+      { "num": "01", "title": "Describe Your Vehicle", "desc": "Fill out our smart form with your car's year, make, model, mileage, and condition. Upload a few photos to maximize your offer." },
+      { "num": "02", "title": "Receive Your Offer", "desc": "Our appraisal engine analyzes real-time market data and delivers a guaranteed offer — typically within minutes of submission." },
+      { "num": "03", "title": "Get Paid & We Pick Up", "desc": "Accept your offer, choose a pickup time, and we handle the rest. Payment is issued on the spot. It really is that simple." }
+    ]
+  },
+  "footer": {
+    "tagline": "Canada's smarter way to sell.",
+    "copyright": "© 2026 SellYourAuto.ca. All rights reserved.",
+    "disclaimer": "SellYourAuto.ca operates coast to coast across Canada."
+  }
+}
