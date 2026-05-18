@@ -32,18 +32,19 @@ export default function Logo({ light = false, className, style }: LogoProps) {
       <path
         fill="white"
         fillRule="evenodd"
-        d={
-          // Outer body
-          'M 35,15 Q 69,9 103,15 L 117,41 Q 127,55 127,73 Q 127,91 119,103' +
-          ' C 117,119 94,127 87,103 Q 79,108 69,108 Q 59,108 51,103' +
-          ' C 44,127 21,119 19,103 Q 11,91 11,73 Q 11,55 21,41 Z' +
-          // Left headlight hole
-          ' M 23,74 A 17,12 0 1,0 57,74 A 17,12 0 1,0 23,74 Z' +
-          // Right headlight hole
-          ' M 81,74 A 17,12 0 1,0 115,74 A 17,12 0 1,0 81,74 Z' +
-          // Grille hole
-          ' M 61,85 L 77,85 Q 82,85 82,90 Q 82,96 77,96 L 61,96 Q 56,96 56,90 Q 56,85 61,85 Z'
-        }
+        d={[
+          // Outer body — clear cabin arch + wide lower body + wheel arches
+          'M 32,14 Q 69,8 106,14 L 120,42 Q 128,56 128,73',
+          'Q 128,92 120,104 C 118,120 98,128 88,106',
+          'Q 79,111 69,111 Q 59,111 50,106',
+          'C 40,128 20,120 18,104 Q 10,92 10,73 Q 10,56 18,42 Z',
+          // Left headlight
+          'M 19,79 A 19,13 0 1,0 57,79 A 19,13 0 1,0 19,79 Z',
+          // Right headlight
+          'M 81,79 A 19,13 0 1,0 119,79 A 19,13 0 1,0 81,79 Z',
+          // Bumper/grille bar (wide, below headlights)
+          'M 55,97 L 83,97 Q 88,97 88,102 Q 88,108 83,108 L 55,108 Q 50,108 50,102 Q 50,97 55,97 Z',
+        ].join(' ')}
       />
 
       {/* ── "sellyour" ── */}
